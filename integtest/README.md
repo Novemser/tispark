@@ -29,6 +29,7 @@ java -Dtest.mode=Load -cp ./conf:$./lib/* com.pingcap.spark.TestFramework
 ### Configuration
 Here is a sample for config.properties
 ```
+spark.tispark.pd.addresses=127.0.0.1:2379
 pd.addrs=127.0.0.1:2379
 tidb.addr=127.0.0.1
 tidb.port=4000
@@ -38,7 +39,8 @@ test.basepath=/Users/whoever/workspace/pingcap/tispark/integtest/testcases
 
 | Key           | Desc          |
 | ------------- |:-------------:|
-| pd.addrs        | Placement Driver Address separated by "," |
+| spark.tispark.pd.addresses | PD Cluster Addresses, split by comma(Used for spark) |
+| pd.addrs        | Placement Driver Address separated by ","(Used for TiDB) |
 | tidb.addr      | TiDB Address      |
 | tidb.port      | TiDB Port      |
 | tidb.user      | TiDB username |
@@ -46,4 +48,3 @@ test.basepath=/Users/whoever/workspace/pingcap/tispark/integtest/testcases
 | test.mode     | Test: Run test only; Load: Load only; LoadNTest: Load and Test; Dump: Dump database specified by test.dumpDB.databases |
 | test.dumpDB.databases  | Database to dump. Required for dump database |
 | test.ignore      | Test path to ignore. Separated by comma |
-

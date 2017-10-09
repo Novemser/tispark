@@ -33,7 +33,7 @@ object TestFramework extends LazyLogging {
 
   def loadConf(conf: String): Properties = {
     val confStream = getClass().getClassLoader().getResourceAsStream(conf)
-    val prop = new Properties();
+    val prop = new Properties()
     prop.load(confStream)
     prop
   }
